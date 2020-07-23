@@ -38,13 +38,13 @@
 	        "iconPath": "static/index.png",
 	        "selectedIconPath": "static/index-selected.png",
 	        "text": "index"
+	    },
+		{
+	        "pagePath": "pages/center/index",
+	        "iconPath": "static/center.png",
+	        "selectedIconPath": "static/center-selected.png",
+	        "text": "我"
 	    }
-		// {
-	 //        "pagePath": "pages/center/index",
-	 //        "iconPath": "static/center.png",
-	 //        "selectedIconPath": "static/center-selected.png",
-	 //        "text": "我"
-	 //    },
 		]
 	}
 }

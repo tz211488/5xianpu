@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "vocal-item": "/components/vocal-item/vocal-item"
+  },
+  "component": true
+}

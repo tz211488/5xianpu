@@ -2,9 +2,10 @@
 	<view>
 		<music-score ref="music"></music-score>
 		<view class="u-flex u-p-26">
-			<u-button :custom-style="customStyle" :ripple="true" @click="update">更新</u-button>
-			<u-button :custom-style="customStyle" :ripple="true" @click="show">提示</u-button>
+			<u-button :custom-style="customStyle" :ripple="true" @click="update"></u-button>
+			<u-button :custom-style="customStyle" :ripple="true" @click="switchNotice"></u-button>
 		</view>
+		
 		
 	</view>
 </template>
@@ -21,8 +22,31 @@
 			};
 		},
 		methods:{
+			randomNum(minNum, maxNum){
+				switch (arguments.length) {
+				    case 1:
+				      return parseInt(Math.random() * minNum + 1, 10);
+				      break;
+				    case 2:
+				      return parseInt(Math.random() * ( maxNum - minNum + 1 ) + minNum, 10);
+				      //或者 Math.floor(Math.random()*( maxNum - minNum + 1 ) + minNum );
+				      break;
+				    default:
+				      return 0;
+				      break;
+				  }
+				
+			},
 			update(){
-				this.$refs.music.update([1,2,3,5])
+				let tempList = []
+				for(var i=0;i<5;i++){
+					tempList.push(this.randomNum(1,8))
+				}
+				console.log('orignal',tempList)
+				this.$refs.music.update(tempList)
+			},
+			switchNotice(){
+				this.$store.state.showNotice = !this.$store.state.showNotice;
 			}
 			
 		}
@@ -36,6 +60,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.content-container{
+		background-color: grey;
 	}
 
 </style>

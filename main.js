@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App'
+import store from './store/store.js'
+Vue.prototype.$store = store
 
 Vue.config.productionTip = false
 
@@ -10,6 +12,7 @@ import uView from 'uview-ui'
 Vue.use(uView);
 
 const app = new Vue({
-    ...App
+    ...App,
+	store,
 })
 app.$mount()

@@ -1,7 +1,10 @@
 <template>
-	<view class="item u-relative">
+	<view class="item u-relative" :style="{bottom: index*25 + 'rpx'}">
 		
-		<text class="item-icon u-absolute" :style="{bottom:index*25 +'rpx'}">O</text>
+		
+		<text v-if="showNotice" class="item-icon-notice u-absolute">{{noticeText}}</text>
+		<text class="item-icon u-absolute">O</text>
+		
 		
 	</view>
 </template>
@@ -20,22 +23,36 @@
 		},
 		computed:{
 			
+			showNotice(){
+				return this.$store.state.showNotice;
+			},
+			noticeText(){
+				const noticeTextList = ['do','rui','mi','fa','so','la','xi','dwo']
+				return noticeTextList[this.index-1]
+			}
+			
+			
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.item{
-
-		height: 400rpx;
-		width: 100rpx;
-		background-color: green;
+     
+		
+	
+		
+		align-self: flex-end;
+		// margin-left:60rpx;
 	}
 	.item-icon{
-		font-size: 47rpx;
-		background-color: red;
+		font-size: 50rpx;
+	
 		line-height: 50rpx;
 		height: 50rpx;
+	}
+	.item-icon-notice{
+		top: -50rpx;
 	}
 
 </style>

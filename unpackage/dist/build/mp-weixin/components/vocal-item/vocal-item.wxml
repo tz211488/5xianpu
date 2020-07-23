@@ -1,0 +1,1 @@
+<view class="item u-relative data-v-6346524c" style="{{'bottom:'+(index*25+'rpx')+';'}}"><block wx:if="{{showNotice}}"><text class="item-icon-notice u-absolute data-v-6346524c">{{noticeText}}</text></block><text class="item-icon u-absolute data-v-6346524c">O</text></view>
